@@ -31,7 +31,6 @@ def get_message(message):
         last_message_times[chat_id] = current_time
         return
 
-
     if message.text == "/start":
         bot.send_photo(message.chat.id, "https://i.imgur.com/aLfTbfo.png", get_translation("instruction", message.from_user.language_code))
     else:
