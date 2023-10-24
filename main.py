@@ -5,6 +5,14 @@ import time
 
 bot = telebot.TeleBot("6507203007:AAHqYjiI05OydfD38llWSlV5Ywu9IBl7dJw")
 last_message_times = {}
+phrases = {}
+
+with open("phrases.txt", "r") as file:
+    for string in file.readlines():
+        splited_string = string.split(" - ")
+        if len(splited_string) != 2:
+            break
+        phrases[splited_string[0]] = splited_string[1]
 
 def log(message, log_type):
     timestamp = datetime.now().strftime("%m.%d.%Y %H:%M:%S")
@@ -12,12 +20,7 @@ def log(message, log_type):
         file.write(f"{timestamp} : {log_type} : {message}\n")
 
 def get_translation(argument, language):
-    with open("phrases.txt", "r") as file:
-        with open("phrases.txt", "r") as file_len:
-            for x in range(len(file_len.readlines())):
-                argument_temp = file.readline().split(" - ")
-                if argument_temp.pop(0) == argument:
-                    return GoogleTranslator(source="en", target=language).translate(argument_temp.pop(0))
+    return GoogleTranslator(source="en", target=language).translate(phrases[argument])
 
 @bot.message_handler(content_types=["text"])
 def get_message(message):
@@ -31,9 +34,8 @@ def get_message(message):
         last_message_times[chat_id] = current_time
         return
 
-
     if message.text == "/start":
-        bot.send_photo(message.chat.id, "https://i.imgur.com/aLfTbfo.png", get_translation("instruction", message.from_user.language_code))
+        bot.send_photo(message.chat.id, "https://i.imgur.com/aLfTbfo.png", get_translation("Welcome_message", message.from_user.language_code))
     else:
         print("!")
         print("!")
