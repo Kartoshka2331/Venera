@@ -3,16 +3,18 @@ from deep_translator import GoogleTranslator
 import telebot
 import time
 
+from methods.TEST import *
+
 bot = telebot.TeleBot("6507203007:AAHqYjiI05OydfD38llWSlV5Ywu9IBl7dJw")
 last_message_times = {}
 phrases = {}
 
 with open("phrases.txt", "r") as file:
     for string in file.readlines():
-        splited_string = string.split(" - ")
+        splited_string = string.split(" --- ")
         if len(splited_string) != 2:
             break
-        phrases[splited_string[0]] = splited_string[1]
+        phrases[splited_string[0]] = splited_string[1].replace("\\n", "\n")
 
 def log(message, log_type):
     timestamp = datetime.now().strftime("%m.%d.%Y %H:%M:%S")
@@ -35,11 +37,11 @@ def get_message(message):
         return
 
     if message.text == "/start":
-        bot.send_photo(message.chat.id, "https://i.imgur.com/aLfTbfo.png", get_translation("Welcome_message", message.from_user.language_code))
+        bot.send_photo(message.chat.id, "https://i.imgur.com/aLfTbfo.png", get_translation("Welcome_message", message.from_user.language_code).replace("{var1}", "/number").replace("{var2}", "/email").replace("{var3}", "/ip").replace("{var4}", "/nickname").replace("{var5}", "/photo"))
     else:
-        print("!")
-        print("!")
-        print("!")
+        if message.text.startswith("/ip "):
+            message_text = message.text.replace("/ip ", "")
+            bot.send_message(message.chat.id, TEST(message_text))
 
 if __name__ == "__main__":
     log("Starting", "message")
