@@ -6,7 +6,7 @@ from logger import *
 
 from methods.number import *
 
-bot = telebot.TeleBot("6507203007:AAGp9HtrputlDwmVrodT07kwpaMEyAugGTg")
+bot = telebot.TeleBot("")
 
 @bot.message_handler(content_types=["text"])
 def get_message(message):
