@@ -1,2 +1,3 @@
-def check_number(number):
-    return "your phone number is: " + number
+from translator import *
+def check_number(number, user_language_code):
+    return get_translation("Invalid_number", user_language_code).replace("{var1}", number)

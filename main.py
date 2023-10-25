@@ -17,13 +17,13 @@ def get_message(message):
 
     else:
         if message.text.startswith("/number "):
-            bot.send_message(message.chat.id, check_number(message.text.replace("/number ", "")))
+            bot.send_message(message.chat.id, check_number(message.text.replace("/number ", ""), message.from_user.language_code))
         elif message.text.startswith("/email "):
-            bot.send_message(message.chat.id, check_email(message.text.replace("/email ", "")))
+            bot.send_message(message.chat.id, check_email(message.text.replace("/email ", ""), message.from_user.language_code))
         elif message.text.startswith("/ip "):
-            bot.send_message(message.chat.id, check_ip(message.text.replace("/ip ", "")))
+            bot.send_message(message.chat.id, check_ip(message.text.replace("/ip ", ""), message.from_user.language_code))
         elif message.text.startswith("/nickname "):
-            bot.send_message(message.chat.id, check_nickname(message.text.replace("/nickname ", "")))
+            bot.send_message(message.chat.id, check_nickname(message.text.replace("/nickname ", ""), message.from_user.language_code))
         else:
             bot.send_message(message.chat.id, get_translation("Unknown_command", message.from_user.language_code).replace("{var1}", "/help"))
 
@@ -31,7 +31,7 @@ def get_message(message):
 def get_message(message):
     if anti_spam(str(message.chat.id)): return
 
-    bot.send_message(message.chat.id, check_photo(bot.download_file(bot.get_file(message.document.file_id).file_path)))
+    bot.send_message(message.chat.id, check_photo(bot.download_file(bot.get_file(message.document.file_id).file_path), message.from_user.language_code))
 
 if __name__ == "__main__":
     log("Starting", "message")

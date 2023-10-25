@@ -1,2 +1,3 @@
 Welcome_message --- Hello there! To select a specific function, please use the following commands:\n\n{var1} - search information by phone number.\n{var2} - search information by email.\n{var3} - search information by IP address.\n{var4} - search information by nickname.\nsend a photo - search information by photo.\n\nTo get started with the bot, simply choose one of the provided commands.
 Unknown_command --- You have entered the wrong command. Use this {var1} command for help.
+Invalid_number --- Your number {var1}, is not a number
