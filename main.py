@@ -5,8 +5,9 @@ from translator import *
 from logger import *
 
 from methods.number import *
+from methods.ip import *
 
-bot = telebot.TeleBot("")
+bot = telebot.TeleBot("6507203007:AAGp9HtrputlDwmVrodT07kwpaMEyAugGTg")
 
 @bot.message_handler(content_types=["text"])
 def get_message(message):
