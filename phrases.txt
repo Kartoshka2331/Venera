@@ -2,3 +2,4 @@ Welcome_message --- Hello there! To select a specific function, please use the f
 Unknown_command --- You have entered the wrong command. Use this {var1} command for help.
 Invalid_ip --- The Ip address you entered ({var1}) is incorrect.
 ip_format --- IP address: {var1}\nCountry: {var2}\nRegion: {var3}\nProvider: {var4}\nCity: {var5}\nCoordinates: {var6}\nAddress: {var7}\nAddress(google maps): {var8}
+Invalid_number --- Your number {number}, is not a number
