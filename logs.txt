@@ -1,7 +1,14 @@
-10.25.2023 14:06:55 : message : Starting
-10.25.2023 14:11:46 : message : Starting
-10.25.2023 14:17:33 : message : Starting
-10.25.2023 14:17:42 : message : Starting
-10.25.2023 14:23:26 : message : Starting
-10.25.2023 14:23:42 : message : Starting
-10.25.2023 14:24:34 : message : Starting
+10.25.2023 15:18:50 : message : Starting
+10.25.2023 15:20:13 : message : Starting
+10.25.2023 15:20:16 : message : Checking of ip address 0.0.0.0 was failed list index out of range
+10.25.2023 16:56:21 : message : Starting
+11.03.2023 21:21:57 : message : Starting
+11.03.2023 21:23:18 : message : Starting
+11.03.2023 21:23:59 : message : Starting
+11.03.2023 21:24:37 : message : Starting
+11.03.2023 21:25:33 : message : Starting
+11.03.2023 22:01:24 : message : Starting
+11.03.2023 22:01:55 : message : Starting
+11.03.2023 22:11:26 : message : Starting
+11.03.2023 22:22:54 : message : Starting
+11.03.2023 22:25:52 : message : Starting

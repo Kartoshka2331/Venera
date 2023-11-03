@@ -6,7 +6,7 @@ def anti_spam(chat_id):
     current_time = time.time()
     if chat_id not in last_message_times:
         last_message_times[chat_id] = current_time
-    elif current_time - last_message_times[chat_id] > 1:
+    elif current_time - last_message_times[chat_id] > 2:
         last_message_times[chat_id] = current_time
     else:
         last_message_times[chat_id] = current_time
